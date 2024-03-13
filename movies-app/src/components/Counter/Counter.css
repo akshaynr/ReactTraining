@@ -1,0 +1,24 @@
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+}
+  
+.counter button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.counter p {
+    margin: 10px 10px;
+    font-size: 1.2rem;
+    color: #fff;
+}
