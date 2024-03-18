@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import './App.css';
 import Counter from './components/Counter/Counter';
 import Search from './components/Search/Search';
@@ -9,16 +9,11 @@ const initialSearchValue = '';
 const genresList = ["All", "Documentary", "Comedy", "Horror", "Crime"];
 
 
-function App() {
+const App = () => {
   const [selectedGenre, setSelectedGenre] = useState(genresList[0]);
 
-  const onSearchSubmit = (query) => {
-    console.log(`Search Query: ${query}`);
-  }
-
-  const onGenreSelect = (genre) => {
-    setSelectedGenre(genre);
-  }
+  const onSearchSubmit = useCallback((query) => console.log(`Search Query: ${query}`), []);
+  const onGenreSelect = useCallback((genre) =>setSelectedGenre(genre), []);
 
   return (
     <div className="App">

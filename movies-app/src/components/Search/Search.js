@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Search.css'
 
-function Search({initialQuery, onSearch}){
+const Search = ({initialQuery, onSearch}) => {
     const [query, setQuery] = useState(initialQuery || '');
 
     const handleChange = (event) => {
@@ -27,7 +27,7 @@ function Search({initialQuery, onSearch}){
                     <input 
                         type="text" 
                         className="form-control" 
-                        placeholder="What do you want to search?"
+                        placeholder="What do you want to watch?"
                         value={query}
                         onChange={handleChange}
                         onKeyDown={handleKeyDown}

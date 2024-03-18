@@ -1,6 +1,7 @@
 .genre-container {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 50px;
 }
 
 .genre-button {
@@ -12,6 +13,7 @@
     margin: 8px;
     cursor: pointer;
     text-transform: uppercase;
+    font-size: 14px;
 }
   
 .genre-button.selected::after {

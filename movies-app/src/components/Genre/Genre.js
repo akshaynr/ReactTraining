@@ -1,6 +1,6 @@
 import './Genre.css';
 
-function Genre({ genresList, selectedGenre, onGenreSelect}){
+const Genre = ({ genresList, selectedGenre, onGenreSelect}) => {
     const onGenreSelection = (selectedGenre) => {
         onGenreSelect(selectedGenre);
     }
