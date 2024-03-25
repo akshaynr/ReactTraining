@@ -1,7 +1,8 @@
 .genre-container {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 50px;
+    margin-top: 10px;
+    background-color: #232323;
 }
 
 .genre-button {
