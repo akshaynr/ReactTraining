@@ -11,6 +11,7 @@ const Genre = ({ genresList, selectedGenre, onGenreSelect}) => {
                     key={genre}
                     onClick={() => onGenreSelection(genre)}
                     className={`genre-button ${selectedGenre === genre ? 'selected' : ''}`}
+                    data-testid={'genre-button-' + genre}
                 >
                     {genre}
                 </button>

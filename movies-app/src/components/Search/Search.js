@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './Search.css'
 
-const Search = ({initialQuery, onSearch}) => {
-    const [query, setQuery] = useState(initialQuery || '');
+const Search = ({initialSearchQuery, onSearch}) => {
+    const [query, setQuery] = useState(initialSearchQuery || '');
 
     const handleChange = (event) => {
         setQuery(event.target.value);
@@ -31,8 +31,9 @@ const Search = ({initialQuery, onSearch}) => {
                         value={query}
                         onChange={handleChange}
                         onKeyDown={handleKeyDown}
+                        data-testid="search-input"
                     />
-                    <button type="submit" className="btn btn-search">Search</button>          
+                    <button type="submit" className="btn btn-search" data-testid="search-btn">Search</button>          
                 </form>
             </div>
         </section>
