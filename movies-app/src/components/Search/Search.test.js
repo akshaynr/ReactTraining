@@ -7,6 +7,9 @@ describe('Search', () => {
     test('should render correctly', () => {
         const initialValue = '';
         render(<Search initialSearchQuery={initialValue} onSearch={onSearch} />);
+
+        const headingElement =  screen.getByRole('heading');
+        expect(headingElement).toBeInTheDocument();
     
         const placeHolderElement = screen.getByPlaceholderText('What do you want to watch?');
         expect(placeHolderElement).toBeInTheDocument();
