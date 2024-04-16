@@ -2,13 +2,13 @@ import { render, screen } from '@testing-library/react';
 import MovieTile from './MovieTile';
 import { Movies } from '../../constants/constants'
 
-describe('MovieTile', () => {
-    const onMovieSelect = jest.fn();
-    const movieInfo = Movies[0];
+const onMovieSelect = jest.fn();
+const movieInfo = Movies[0];
+const renderComponent = () => render(<MovieTile movieDetails={movieInfo} onMovieSelect={onMovieSelect} />);
 
+describe('MovieTile', () => {
     test('should render correctly', () => {
-        
-        render(<MovieTile movieDetails={movieInfo} onMovieSelect={onMovieSelect}/>);
+        renderComponent();
         // Text
         const movieTitleElement = screen.getByText(movieInfo.title);
         expect(movieTitleElement).toBeInTheDocument();

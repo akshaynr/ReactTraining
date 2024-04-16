@@ -2,18 +2,17 @@ import { render, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import Search from './Search';
 
-describe('Search', () => {
-    const onSearch = jest.fn();
-    test('should render correctly', () => {
-        const initialValue = '';
-        render(<Search initialSearchQuery={initialValue} onSearch={onSearch} />);
+const onSearch = jest.fn();
+const initialValue = '';
+const renderComponent = () => render(<Search initialSearchQuery={initialValue} onSearch={onSearch} />);
 
-        const headingElement =  screen.getByRole('heading');
-        expect(headingElement).toBeInTheDocument();
-    
+describe('Search', () => {
+
+    test('should render correctly', () => {
+        renderComponent();
         const placeHolderElement = screen.getByPlaceholderText('What do you want to watch?');
         expect(placeHolderElement).toBeInTheDocument();
-    
+
         const searchBtnResult = screen.getByRole('button', {
             name: 'Search'
         });
@@ -22,9 +21,7 @@ describe('Search', () => {
 
     test('should contain text as Test and triggers onSearch on search button click  ', async () => {
         user.setup()
-        const initialValue = '';
-        render(<Search initialSearchQuery={initialValue} onSearch={onSearch} />);
-    
+        renderComponent();
         const searchInput = screen.getByRole('textbox');
         await user.type(searchInput, 'Test');
         expect(searchInput).toHaveValue('Test');

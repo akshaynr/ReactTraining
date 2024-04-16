@@ -1,14 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import MovieCard from './MovieCard';
-import { Movies } from '../../../constants/constants'
+import { Movies } from '../../../constants/constants';
+
+const onMovieSelect = jest.fn();
+const movieInfo = Movies[0];
+const renderComponent = () => render(<MovieCard movieDetails={movieInfo} onMovieSelect = { onMovieSelect }/>);
 
 describe('MovieCard', () => {
-    const onMovieSelect = jest.fn();
-    const movieInfo = Movies[0];
-
     test('should render correctly', () => {
-        
-        render(<MovieCard movieDetails={movieInfo} onMovieSelect = { onMovieSelect }/>);
+        renderComponent();
         // Text
         const movieTitleElement = screen.getByText(movieInfo.title);
         expect(movieTitleElement).toBeInTheDocument();
