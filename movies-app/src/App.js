@@ -8,8 +8,6 @@ import { GenresList, SortType } from './constants/constants';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import MovieTile from './components/MovieTile/MovieTile';
 import SortBy from './components/SortBy/SortBy';
-import MovieModal from './components/MovieModal/MovieModal';
-import MovieForm from './components/MovieForm/MovieForm';
 
 const initialCounterValue = 0;
 const initialSearchValue = '';
@@ -19,8 +17,12 @@ const App = () => {
   const [movieDetails, setSelectedMovie] = useState('');
   const [sortBy, setSortBy] = useState(SortType[0].value);
   const [isModalOpen, setModalOpen] = useState(false);
+  const [titleSearchQuery, setTitleSearchQuery] = useState(initialSearchValue);
 
-  const onSearchSubmit = useCallback((query) => console.log(`Search Query: ${query}`), []);
+  const onSearchSubmit = useCallback((query) => { 
+    console.log(`Search Query: ${query}`);
+    setTitleSearchQuery(query)
+  }, []);
   const onGenreSelect = useCallback((genre) => setSelectedGenre(genre), []);
   const onMovieSelect = useCallback((movie) => setSelectedMovie(movie), []);
   const onSortBySelect = useCallback((sortByValue) => setSortBy(sortByValue), []);
@@ -56,7 +58,7 @@ const App = () => {
         <SortBy selectedSortBy={sortBy} onSortBySelect={onSortBySelect} />
       </div>
 
-      <MovieDetails onMovieSelect={onMovieSelect} selectedGenre={selectedGenre} selectedSortBy={sortBy} />
+      <MovieDetails onMovieSelect={onMovieSelect} selectedGenre={selectedGenre} selectedSortBy={sortBy} titleSearchQuery={titleSearchQuery}/>
     </div>
     </>
   );
