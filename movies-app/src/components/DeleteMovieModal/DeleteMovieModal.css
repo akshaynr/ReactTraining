@@ -1,0 +1,129 @@
+.modal::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 0;
+    background: #232323;
+}
+
+.modal-header {
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+}
+
+.btn-close {
+    background: none;
+    opacity: 1;
+    margin: -1.5rem -0.5rem -0.5rem auto !important;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.dark-modal .form-control,
+.dark-modal .form-select {
+    box-shadow: none;
+    border-radius: 0;
+    background: #424242;
+    color: #fff;
+    border-color: #424242;
+    padding: 12px 20px;
+}
+
+.dark-modal .form-label {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    color: #e4534e;
+    letter-spacing: 0.5px;
+}
+
+.icon {
+    position: absolute;
+    right: 15px;
+    top: 40px;
+    z-index: 2;
+}
+
+.icon-input {
+    padding-right: 45px;
+}
+
+.btn-primary {
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: #e4534e;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    text-transform: uppercase;
+}
+
+.btn-primary:hover {
+    background: #e4534e;
+    color: #fff;
+}
+
+.btn-check:focus+.btn-primary,
+.btn-primary:focus,
+.btn-check:active+.btn-primary,
+.btn-check:checked+.btn-primary,
+.btn-primary.active,
+.btn-primary:active,
+.show>.btn-primary.dropdown-toggle {
+    box-shadow: none;
+    background: #e4534e;
+    color: #fff;
+}
+
+.btn-secondary {
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: transparent;
+    color: #e4534e;
+    border-color: #e4534e;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.btn-secondary:hover {
+    background: #e4534e;
+    color: #fff;
+    border-color: #e4534e;
+}
+
+btn-secondary,
+.btn-secondary:focus,
+.btn-check:active+.btn-primary,
+.btn-check:checked+.btn-secondary,
+.btn-secondary.active,
+.btn-secondary:active,
+.show>.btn-secondary.dropdown-toggle {
+    box-shadow: none;
+    background: #e4534e;
+    color: #fff;
+}
+
+.action-content p {
+    font-size: 16px;
+    color: #fff;
+}

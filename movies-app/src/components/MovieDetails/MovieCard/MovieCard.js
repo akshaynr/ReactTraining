@@ -1,4 +1,7 @@
+import { useCallback, useState } from 'react';
+import { EditMovieModal } from '../../../stories/Modal.stories';
 import './MovieCard.css'
+import DeleteMovieModal from '../../DeleteMovieModal/DeleteMovieModal';
 
 const MovieCard = ({ movieDetails, onMovieSelect }) => {
     const { id, title, release_date, poster_path, genres } = movieDetails;
@@ -11,8 +14,18 @@ const MovieCard = ({ movieDetails, onMovieSelect }) => {
         }
         else return '-';
     }
+    const[ isEditModalOpen, setEditModalOpen ] = useState(false);
+    const[ isDeleteModalOpen, setDeleteModalOpen ] = useState(false);
 
     const selectedMovie = (movieDetails) => onMovieSelect(movieDetails);
+    const onDeleteModalOpen = useCallback((isModalClose) => setDeleteModalOpen(isModalClose), []);
+    const openDeleteModal = () => {
+        setDeleteModalOpen(true);
+    }
+    const onEditModalOpen = useCallback((isModalClose) => setEditModalOpen(isModalClose), []);
+    const openEditeModal = () => {
+        setEditModalOpen(true);
+    }
 
     return (
         <div className="col-xl-4" key={id} data-testid = "movie-card">
@@ -42,8 +55,8 @@ const MovieCard = ({ movieDetails, onMovieSelect }) => {
 
                         </button>
                         <ul className="dropdown-menu dropdown-menu-end">
-                            <li><a className="dropdown-item" href="#">Edit</a></li>
-                            <li><a className="dropdown-item" href="#">Delete</a></li>
+                            <li onClick={openEditeModal}><a className="dropdown-item" href="javascript:void(0)">Edit</a></li>
+                            <li onClick={openDeleteModal}><a className="dropdown-item" href="javascript:void(0)">Delete</a></li>
                         </ul>
                     </div>
 
@@ -59,6 +72,8 @@ const MovieCard = ({ movieDetails, onMovieSelect }) => {
                     <a href="#">{releaseYear}</a>
                 </div>
             </div>
+            <EditMovieModal movieInfo={movieDetails} isModalOpen = {isEditModalOpen} modalHeader="Edit Movie" onClose={onEditModalOpen} />
+            <DeleteMovieModal movieInfo={movieDetails}  isModalOpen = {isDeleteModalOpen} onClose={onDeleteModalOpen} />
         </div>
     )
 }
