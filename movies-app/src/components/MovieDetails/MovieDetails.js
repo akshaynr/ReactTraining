@@ -2,14 +2,8 @@ import { useMemo } from 'react';
 import { Movies } from '../../constants/constants'
 import MovieCard from './MovieCard/MovieCard';
 import './MovieDetails.css'
-import { useFetch } from '../../hooks/useFetch';
-import { getMovieDetailsUrl } from '../../utils/utils';
 
-const MovieDetails = ({ onMovieSelect, selectedGenre, selectedSortBy, titleSearchQuery }) => {
-    const url = getMovieDetailsUrl(selectedGenre, selectedSortBy, titleSearchQuery)
-    const [isLoading, responseData] = useFetch(url);
-    console.log(responseData);
-
+const MovieDetails = ({ movieData }) => {
     /*
     // Previous Logic before api integration
     const sortAndFilterMovies = (selectedGenre, selectedSortBy) => {
@@ -22,17 +16,17 @@ const MovieDetails = ({ onMovieSelect, selectedGenre, selectedSortBy, titleSearc
     }
     const moviesList =  useMemo(() => sortAndFilterMovies(selectedGenre, selectedSortBy), [selectedGenre, selectedSortBy]);
     */
-   
+
     return (
         <div className="container-fluid px-4 mx-2">
             <div className="row">
                 <div className="col-xl-12">
-                    <div className="search-result-count">{responseData?.limit} movies found</div>
+                    <div className="search-result-count">{movieData?.limit} movies found</div>
                 </div>
             </div>
             <div className="row">
                 {
-                    responseData?.data?.map((element) => <MovieCard key={element.id} movieDetails={element} onMovieSelect = { onMovieSelect }/>)
+                    movieData?.data?.map((element) => <MovieCard key={element.id} movieDetails={element} />)
                 }
             </div>
         </div>

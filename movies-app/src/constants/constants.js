@@ -13,7 +13,8 @@ const PAGE_LIMIT = 10;
 const SERVER_HOST_URL = 'http://localhost:4000';
 
 export const API_URLS = {
-    getAllMovies: `${SERVER_HOST_URL}/movies?offset=0&limit=${PAGE_LIMIT}`,
+    getAllMoviesWithOffsetLimit: `${SERVER_HOST_URL}/movies?offset=0&limit=${PAGE_LIMIT}`,
+    getMovies: `${SERVER_HOST_URL}/movies`
 }
 
 export const Movies = [

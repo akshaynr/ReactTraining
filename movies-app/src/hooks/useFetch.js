@@ -23,6 +23,7 @@ export const useFetch = (url, dependencies = []) => {
         };
 
         fetchData();
+        console.log('Dependences:', dependencies);
     }, [...dependencies, url])
 
     return [isLoading, responseData];
