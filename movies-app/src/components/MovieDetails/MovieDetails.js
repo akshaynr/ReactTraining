@@ -1,22 +1,7 @@
-import { useMemo } from 'react';
-import { Movies } from '../../constants/constants'
 import MovieCard from './MovieCard/MovieCard';
 import './MovieDetails.css'
 
 const MovieDetails = ({ movieData }) => {
-    /*
-    // Previous Logic before api integration
-    const sortAndFilterMovies = (selectedGenre, selectedSortBy) => {
-        const sortedMovies = selectedSortBy === 'release_date' 
-            ? Movies.sort((a,b) => new Date(b.release_date) - new Date(a.release_date)) 
-            : Movies.sort((a,b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
-        return selectedGenre === 'All' 
-            ? sortedMovies
-            : sortedMovies.filter((element) => element.genres.some((value) => value === selectedGenre));
-    }
-    const moviesList =  useMemo(() => sortAndFilterMovies(selectedGenre, selectedSortBy), [selectedGenre, selectedSortBy]);
-    */
-
     return (
         <div className="container-fluid px-4 mx-2">
             <div className="row">
