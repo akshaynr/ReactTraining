@@ -18,20 +18,6 @@ export const MovieList = () => {
     const selectedGenreQueryParam = searchParams.get('genre');
     const searchQueryParam = searchParams.get('query');
 
-    // useEffect(() => {
-    //     if (selectedGenreQueryParam) {
-    //         setSelectedGenre(selectedGenreQueryParam);
-    //     }
-    //     if (searchQueryParam) {
-    //         setTitleSearchQuery(searchQueryParam);
-    //     }
-
-    //     updateQueryParams(searchParams, setSearchParams, {
-    //         query: searchQueryParam || titleSearchQuery,
-    //         genre: selectedGenreQueryParam || selectedGenre,
-    //       });
-    // }, []);
-
     const url = getMovieDetailsUrl(selectedGenreQueryParam, sortBy, searchQueryParam)
     const [isLoading, responseData] = useFetch(url, [titleSearchQuery, selectedGenre, selectedGenreQueryParam, searchQueryParam]);
     const onGenreSelect = useCallback((genre) => setSelectedGenre(genre), []);

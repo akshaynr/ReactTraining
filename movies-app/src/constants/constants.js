@@ -1,5 +1,7 @@
 export const GenresList = ["All", "Documentary", "Comedy", "Horror", "Crime"];
 
+export const GenresOptions = GenresList.filter((genre) => genre != GenresList[0]).map((element) => ({ label: element, value: element }));
+
 export const SortType = [{
     displayName: "Release Date",
     value: 'release_date',
@@ -15,6 +17,13 @@ const SERVER_HOST_URL = 'http://localhost:4000';
 export const API_URLS = {
     getAllMoviesWithOffsetLimit: `${SERVER_HOST_URL}/movies?offset=0&limit=${PAGE_LIMIT}`,
     getMovies: `${SERVER_HOST_URL}/movies`
+}
+
+export const HTTP_METHODS = {
+    GET: 'GET',
+    POST: 'POST',
+    PUT: 'PUT',
+    DELETE: 'DELETE'
 }
 
 export const Movies = [
