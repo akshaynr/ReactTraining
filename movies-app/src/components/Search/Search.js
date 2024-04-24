@@ -23,6 +23,7 @@ const Search = ({initialSearchQuery, onSearch}) => {
     return (
         <section className="banner">
             <div className = "search-wrapper">
+                <h1>Find your movie?</h1>
                 <form onSubmit={handleSubmit}>
                     <input 
                         type="text" 

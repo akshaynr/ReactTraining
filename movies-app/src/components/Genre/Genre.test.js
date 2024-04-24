@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import Genre from './Genre';
+import { GenresList } from '../../constants/constants'
 
 const genresList = ["All", "Documentary", "Comedy", "Horror", "Crime"];
 const selectedGenre = genresList[0];
@@ -21,7 +22,7 @@ describe('Genere', () => {
     test(`should render correctly with ${genresList.length} buttons`, () => {
         renderComponent();
         const result = screen.getAllByRole('button');
-        expect(result).toHaveLength(genresList.length);
+        expect(result).toHaveLength(GenresList.length);
     })
 
     test('should have selected class for element selected', () => {
@@ -42,7 +43,7 @@ describe('Genere', () => {
         user.setup();
         renderComponent();
         const nonSelectedButton = screen.getByRole('button', {
-            name: genresList[1]
+            name: GenresList[1]
         });
         expect(nonSelectedButton).not.toHaveClass('selected');
         await user.click(nonSelectedButton);

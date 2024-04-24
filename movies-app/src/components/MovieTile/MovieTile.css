@@ -1,0 +1,47 @@
+.movie-title {
+    font-size: 30px;
+    font-weight: 400;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .movie-title span {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background: #000;
+    color: #fff;
+    border: solid 1px #fff;
+  }
+  
+  .movie-type {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.6;
+    margin: 15px 0;
+  }
+  
+  .movie-duration {
+    font-size: 18px;
+    font-weight: 300;
+    color: red;
+    display: flex;
+    gap: 30px;
+    margin: 0 0 15px 0;
+  }
+  
+  .movie-dec {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 28px;
+    opacity: 0.6;
+  }
+  

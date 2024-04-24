@@ -1,0 +1,21 @@
+.filter {
+    display: flex;
+    gap: 20px;
+}
+
+.filter p {
+    color: #b2b1ad;
+    text-transform: uppercase;
+    margin: 0
+}
+
+.filter select {
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+}
+
+.filter select:focus {
+    outline: none;
+}

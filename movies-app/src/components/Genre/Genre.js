@@ -1,11 +1,13 @@
 import './Genre.css';
 
-const Genre = ({ genresList, selectedGenre, onGenreSelect}) => {
+const Genre = ({ genresList, selectedGenre, onGenreSelect }) => {
+    
     const onGenreSelection = (selectedGenre) => {
         onGenreSelect(selectedGenre);
     }
+    
     return (
-        <div className='genre-container'>
+        <div>
             {genresList.map((genre) => (
                 <button
                     key={genre}
@@ -15,7 +17,7 @@ const Genre = ({ genresList, selectedGenre, onGenreSelect}) => {
                 >
                     {genre}
                 </button>
-                )
+            )
             )}
         </div>
     )
