@@ -8,6 +8,16 @@ export const SortType = [{
     value: 'title',
 }];
 
+export const FormLabels = {
+    title: 'Title',
+    release_date: 'Release Date',
+    url: 'Movie URL',
+    rating: 'Rating',
+    genre: 'Genre',
+    runtime: 'Runtime',
+    overview: 'Overview'
+}
+
 export const Movies = [
     {
         "id": 337167,
