@@ -21,9 +21,9 @@ class Counter extends Component {
         return createElement(
             'div',
             { className: 'counter' },
-            createElement('p', null, `Count: ${this.state.count}`),
-            createElement('button', { onClick: this.handleIncrement }, 'Increment'),
-            createElement('button', { onClick: this.handleDecrement }, 'Decrement')
+            createElement('p', {'data-testid':'counter-text'}, `Count: ${this.state.count}`),
+            createElement('button', { onClick: this.handleIncrement, 'data-testid': 'counter-increment-btn' }, 'Increment'),
+            createElement('button', { onClick: this.handleDecrement, 'data-testid': 'counter-decrement-btn' }, 'Decrement')
         )
     }
 }
