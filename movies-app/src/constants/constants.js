@@ -1,3 +1,6 @@
+export const InitialCounterValue = 0;
+export const InitialSearchValue = '';
+
 export const GenresList = ["All", "Documentary", "Comedy", "Horror", "Crime"];
 
 export const SortType = [{
@@ -7,6 +10,14 @@ export const SortType = [{
     displayName: "Title",
     value: 'title',
 }];
+
+const PAGE_LIMIT = 10;
+
+const SERVER_HOST_URL = 'http://localhost:4000';
+
+export const API_URLS = {
+    getAllMovies: `${SERVER_HOST_URL}/movies?offset=0&limit=${PAGE_LIMIT}`,
+}
 
 export const FormLabels = {
     title: 'Title',
