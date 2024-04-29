@@ -16,6 +16,16 @@ export const API_URLS = {
     getAllMovies: `${SERVER_HOST_URL}/movies?offset=0&limit=${PAGE_LIMIT}`,
 }
 
+export const FormLabels = {
+    title: 'Title',
+    release_date: 'Release Date',
+    url: 'Movie URL',
+    rating: 'Rating',
+    genre: 'Genre',
+    runtime: 'Runtime',
+    overview: 'Overview'
+}
+
 export const Movies = [
     {
         "id": 337167,
