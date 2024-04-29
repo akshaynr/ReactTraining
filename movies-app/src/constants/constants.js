@@ -1,3 +1,6 @@
+export const InitialCounterValue = 0;
+export const InitialSearchValue = '';
+
 export const GenresList = ["All", "Documentary", "Comedy", "Horror", "Crime"];
 
 export const GenresOptions = GenresList.filter((genre) => genre != GenresList[0]).map((element) => ({ label: element, value: element }));
@@ -24,6 +27,16 @@ export const HTTP_METHODS = {
     POST: 'POST',
     PUT: 'PUT',
     DELETE: 'DELETE'
+}
+
+export const FormLabels = {
+    title: 'Title',
+    release_date: 'Release Date',
+    url: 'Movie URL',
+    rating: 'Rating',
+    genre: 'Genre',
+    runtime: 'Runtime',
+    overview: 'Overview'
 }
 
 export const Movies = [
