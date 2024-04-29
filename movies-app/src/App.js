@@ -15,9 +15,6 @@ const App = () => {
       </Routes>
     </BrowserRouter>
   )
-
-
-  return (<MovieList />);
 }
 
 export default App;
