@@ -24,7 +24,7 @@ const MovieDetails = ({ onMovieSelect, selectedGenre, selectedSortBy }) => {
             </div>
             <div className="row">
                 {
-                    moviesList.map((element) => <MovieCard movieDetails={element} onMovieSelect = { onMovieSelect } />)
+                    moviesList.map((element) => <MovieCard key={element.id} movieDetails={element} onMovieSelect = { onMovieSelect }/>)
                 }
             </div>
         </div>
