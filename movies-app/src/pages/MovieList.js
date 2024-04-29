@@ -4,20 +4,17 @@ import { Default as Counter } from '../stories/Counter.stories';
 import { Default as Search } from '../stories/Search.stories';
 import { Default as Genre } from '../stories/Genre.stories';
 import { AddMovieModal } from '../stories/Modal.stories';
-import { GenresList, SortType } from '../constants/constants';
+import { GenresList, SortType, InitialCounterValue, InitialSearchValue } from '../constants/constants';
 import MovieDetails from '../components/MovieDetails/MovieDetails';
 import MovieTile from '../components/MovieTile/MovieTile';
 import SortBy from '../components/SortBy/SortBy';
-
-const initialCounterValue = 0;
-const initialSearchValue = '';
 
 export const MovieList = () => {
     const [selectedGenre, setSelectedGenre] = useState(GenresList[0]);
     const [movieDetails, setSelectedMovie] = useState('');
     const [sortBy, setSortBy] = useState(SortType[0].value);
     const [isModalOpen, setModalOpen] = useState(false);
-    const [titleSearchQuery, setTitleSearchQuery] = useState(initialSearchValue);
+    const [titleSearchQuery, setTitleSearchQuery] = useState(InitialSearchValue);
 
     const onSearchSubmit = useCallback((query) => {
         console.log(`Search Query: ${query}`);
@@ -40,7 +37,7 @@ export const MovieList = () => {
                         : (
 
                             <div className="header">
-                                <Counter initialCounterValue={initialCounterValue} />
+                                <Counter initialCounterValue={InitialCounterValue} />
                                 <nav className="d-flex justify-content-between align-items-center font-red px-4">
                                     <span><strong>netflix</strong>Roulette</span>
                                     <button className="font-red add-movie" onClick={openModal} id="exampleModal" data-bs-target="#exampleModal">+ Add Movie</button>

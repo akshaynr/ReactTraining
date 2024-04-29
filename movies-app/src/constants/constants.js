@@ -1,3 +1,6 @@
+export const InitialCounterValue = 0;
+export const InitialSearchValue = '';
+
 export const GenresList = ["All", "Documentary", "Comedy", "Horror", "Crime"];
 
 export const SortType = [{
