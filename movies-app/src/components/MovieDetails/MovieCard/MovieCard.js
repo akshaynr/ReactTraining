@@ -1,9 +1,10 @@
 import { useCallback, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { EditMovieModal } from '../../../stories/Modal.stories';
 import './MovieCard.css'
 import DeleteMovieModal from '../../DeleteMovieModal/DeleteMovieModal';
 
-const MovieCard = ({ movieDetails, onMovieSelect }) => {
+const MovieCard = ({ movieDetails }) => {
     const { id, title, release_date, poster_path, genres } = movieDetails;
     const releaseYear = new Date(release_date).getFullYear();
     const displayGenres = () => {
@@ -16,8 +17,11 @@ const MovieCard = ({ movieDetails, onMovieSelect }) => {
     }
     const[ isEditModalOpen, setEditModalOpen ] = useState(false);
     const[ isDeleteModalOpen, setDeleteModalOpen ] = useState(false);
+    const navigate = useNavigate();
 
-    const selectedMovie = (movieDetails) => onMovieSelect(movieDetails);
+    const selectedMovie = (movieDetails) => {
+        navigate(`/${movieDetails.id}`);
+    };
     const onDeleteModalOpen = useCallback((isModalClose) => setDeleteModalOpen(isModalClose), []);
     const openDeleteModal = () => {
         setDeleteModalOpen(true);

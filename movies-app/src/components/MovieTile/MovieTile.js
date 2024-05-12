@@ -1,18 +1,27 @@
+import { useFetch } from '../../hooks/useFetch';
+import { getMovieDetailsByIdUrl } from '../../utils/utils';
 import './MovieTile.css';
+import { useParams, useNavigate } from 'react-router-dom'
 
-const MovieTile = ({ movieDetails, onMovieSelect }) => {
-    const { id, title, release_date, poster_path, genres, vote_average, runtime, overview } = movieDetails;
+const MovieTile = ({ }) => {
+    const { movieId } = useParams();
+    const navigate = useNavigate();
+    const [isLoading, responseData] = useFetch(getMovieDetailsByIdUrl(movieId));
+    const { id, title, release_date, poster_path, genres, vote_average, runtime, overview } = responseData || {};
     const releaseYear = new Date(release_date).getFullYear();
     const displayGenres = () => {
-        if(genres.length === 1) return genres[0];
-        else if(genres.length > 1){
-            const lastGenre = genres.pop();
-            return `${genres.join(', ')} & ${lastGenre}`;
+        if (genres) {
+            if (genres.length === 1) return genres[0];
+            else if (genres.length > 1) {
+                const lastGenre = genres.pop();
+                return `${genres.join(', ')} & ${lastGenre}`;
+            }
         }
-        else return '-';
+
+        return '-';
     }
     const onSearchClick = () => {
-        onMovieSelect('');
+        navigate('/');
     }
 
     return (
