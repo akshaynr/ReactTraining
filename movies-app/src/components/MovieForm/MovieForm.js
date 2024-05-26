@@ -50,7 +50,7 @@ const MovieForm = ({ movieInfo }) => {
                 <div className="row">
                     <div className="col-8">
                         <div className="mb-4">
-                            <label for="title" className="form-label">{FormLabels.title}</label>
+                            <label htmlFor="title" className="form-label">{FormLabels.title}</label>
                             <Field type="text" className="form-control" id="title" name="title" placeholder="Title" />
                             <ErrorMessage name="title" component={TextError} />
                         </div>
@@ -58,7 +58,7 @@ const MovieForm = ({ movieInfo }) => {
 
                     <div className="col-4">
                         <div className="mb-4 position-relative">
-                            <label for="release_date" className="form-label">{FormLabels.release_date}</label>
+                            <label htmlFor="release_date" className="form-label">{FormLabels.release_date}</label>
                             <Field type="text" className="form-control icon-input" id="release_date" name="release_date" placeholder="Select Date" />
                             <div className="icon">
                                 <img src={calendar} alt="Calendar Icon" />
@@ -69,7 +69,7 @@ const MovieForm = ({ movieInfo }) => {
 
                     <div className="col-8">
                         <div className="mb-4">
-                            <label for="poster_path" className="form-label">{FormLabels.url}</label>
+                            <label htmlFor="poster_path" className="form-label">{FormLabels.url}</label>
                             <Field type="text" className="form-control" id="poster_path" name="poster_path" placeholder="https://" />
                             <ErrorMessage name="poster_path" component={TextError} />
                         </div>
@@ -77,7 +77,7 @@ const MovieForm = ({ movieInfo }) => {
 
                     <div className="col-4">
                         <div className="mb-4">
-                            <label for="vote_average" className="form-label">{FormLabels.rating}</label>
+                            <label htmlFor="vote_average" className="form-label">{FormLabels.rating}</label>
                             <Field type="text" className="form-control" id="vote_average" name="vote_average" placeholder="Rating" />
                             <ErrorMessage name="vote_average" component={TextError} />
                         </div>
@@ -85,7 +85,7 @@ const MovieForm = ({ movieInfo }) => {
 
                     <div className="col-8">
                         <div className="mb-4">
-                            <label for="genres" className="form-label">{FormLabels.genre}</label>
+                            <label htmlFor="genres" className="form-label">{FormLabels.genre}</label>
                             <MultiSelectField
                                 id="genres"
                                 options={GenresOptions}
@@ -100,7 +100,7 @@ const MovieForm = ({ movieInfo }) => {
 
                     <div className="col-4">
                         <div className="mb-4">
-                            <label for="runtime" className="form-label">{FormLabels.runtime}</label>
+                            <label htmlFor="runtime" className="form-label">{FormLabels.runtime}</label>
                             <Field type="text" className="form-control" id="runtime" name="runtime" placeholder="Runtime" />
                             <ErrorMessage name="runtime" component={TextError} />
                         </div>
@@ -108,7 +108,7 @@ const MovieForm = ({ movieInfo }) => {
 
                     <div className="col-12">
                         <div className="mb-3">
-                            <label for="overview" className="form-label">{FormLabels.overview}</label>
+                            <label htmlFor="overview" className="form-label">{FormLabels.overview}</label>
                             <Field as='textarea' className="form-control" id="overview" name="overview" rows="4" />
                             <ErrorMessage name="overview" component={TextError} />
                         </div>

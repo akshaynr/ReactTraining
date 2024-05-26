@@ -29,7 +29,8 @@
     "build-storybook": "storybook build",
     "lint": "eslint . --ext .js",
     "start-webpack": "webpack serve --open --config webpack/webpack.config.js --env env=dev",
-    "build-webpack": "webpack --config webpack/webpack.config.js --env env=dev"
+    "build-webpack": "webpack --config webpack/webpack.config.js --env env=prod",
+    "prepare": "husky"
   },
   "eslintConfig": {
     "extends": [
@@ -81,10 +82,12 @@
     "cypress": "^13.7.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-storybook": "^0.8.0",
     "globals": "^15.0.0",
     "html-webpack-plugin": "^5.6.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
     "mini-css-extract-plugin": "^2.9.0",
     "prop-types": "^15.8.1",
     "storybook": "^8.0.8",
@@ -96,5 +99,15 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",
     "webpack-merge": "^5.10.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js, jsx, ts, tsx, json}": [
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

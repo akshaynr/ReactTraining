@@ -45,8 +45,8 @@ const MovieCard = ({ movieDetails }) => {
                                 <circle cx="22" cy="22.5" r="2" fill="white" />
                                 <circle cx="22" cy="30" r="2" fill="white" />
                                 <defs>
-                                    <filter id="filter0_d_0_213" x="0" y="0" width="44" height="44" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <filter id="filter0_d_0_213" x="0" y="0" width="44" height="44" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                        <feFlood floodOpacity="0" result="BackgroundImageFix" />
                                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                                         <feOffset />
                                         <feGaussianBlur stdDeviation="2" />
