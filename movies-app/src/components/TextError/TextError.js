@@ -2,7 +2,7 @@ import './TextError.css';
 
 const TextError = ({ children }) => {
     return (
-        <div class="error mt-2">
+        <div className="error mt-2">
             {children}
         </div>
     )

@@ -30,8 +30,8 @@ const MovieTile = ({ }) => {
                 <span>netflix Roulette</span>
                 <button className="btn btn-link m-4" onClick={onSearchClick}>
                     <svg width="25" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="18.5" cy="10.5" r="9.5" stroke="#F65261" stroke-width="2" />
-                        <path d="M10.5 19.5L1.5 28.5" stroke="#F65261" stroke-width="2" stroke-linecap="square" />
+                        <circle cx="18.5" cy="10.5" r="9.5" stroke="#F65261" strokeWidth="2" />
+                        <path d="M10.5 19.5L1.5 28.5" stroke="#F65261" strokeWidth="2" strokeLinecap="square" />
                     </svg>
                 </button>
             </nav>

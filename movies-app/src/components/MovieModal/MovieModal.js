@@ -8,7 +8,7 @@ const MovieModal = ({ isModalOpen, modalHeader, movieInfo, onClose }) => {
     const onModalClose = () => onClose(false);
     return (
         isModalOpen && <Portal>
-            <div className={`modal fade ${isModalOpen ? 'show' : ''}`} id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style={{ display: isModalOpen ? 'block' : 'none' }}>
+            <div className={`modal fade ${isModalOpen ? 'show' : ''}`} id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style={{ display: isModalOpen ? 'block' : 'none' }}>
                 <div className="modal-dialog modal-dialog-centered modal-lg dark-modal">
                     <div className="modal-content">
                         <div className="modal-header">

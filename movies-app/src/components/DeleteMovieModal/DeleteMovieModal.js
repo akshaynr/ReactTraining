@@ -11,7 +11,7 @@ const DeleteMovieModal = ({ isModalOpen, movieInfo, onClose }) => {
     }
     return (
         isModalOpen && <Portal>
-            <div className={`modal fade ${isModalOpen ? 'show' : ''}`} id="exampleDeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style={{ display: isModalOpen ? 'block' : 'none' }}>
+            <div className={`modal fade ${isModalOpen ? 'show' : ''}`} id="exampleDeleteModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style={{ display: isModalOpen ? 'block' : 'none' }}>
                 <div className="modal-dialog modal-dialog-centered modal-lg dark-modal">
                     <div className="modal-content">
                         <div className="modal-header">
